@@ -65,13 +65,13 @@ void cache_print(struct cache_st *csp, char *name) {
     printf("Block size    = %d words\n", csp->block_size);
     printf("Ways          = %d\n", csp->ways);
     printf("References    = %d\n", csp->refs);
-    printf("Hits          = %d (%.2f%% hit ratio)\n", csp->hits, 
+    printf("Hits          = %d (%.2f%% hit ratio)\n", csp->hits,
            ((double) csp->hits / (double) csp->refs) * 100.00);
     printf("Misses        = %d (%.2f%% miss ratio)\n", csp->misses,
-           ((double) csp->misses / (double) csp->refs) * 100.00);    
+           ((double) csp->misses / (double) csp->refs) * 100.00);
     printf("Misses (cold) = %d\n", csp->misses_cold);
     printf("Misses (hot)  = %d\n", csp->misses_hot);
-    printf("%% Used        = %.2f%%\n", ((double) num_slots_used / (double) csp->size) * 100.0);    
+    printf("%% Used        = %.2f%%\n", ((double) num_slots_used / (double) num_slots) * 100.0);
 }
 
 // Direct mapped lookup
